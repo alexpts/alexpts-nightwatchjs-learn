@@ -1,0 +1,21 @@
+{
+  "name": "alexpts-nightwatchjs-learn",
+  "version": "1.0.0",
+  "description": "e2e test",
+  "main": "index.js",
+  "scripts": {
+    "test": "nightwatch",
+    "selenium-start": "selenium-standalone start",
+    "selenium-install": "selenium-standalone install"
+  },
+  "author": "Alexpts",
+  "license": "MIT",
+  "devDependencies": {
+    "selenium-standalone": "~5.1.0"
+  },
+  "dependencies": {
+    "lodash": "~4.10.0",
+    "nightwatch": "~0.8.18",
+    "request": "~2.70.0"
+  }
+}
