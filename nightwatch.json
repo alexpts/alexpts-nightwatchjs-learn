@@ -1,0 +1,20 @@
+{
+  "src_folders" : ["e2e"],
+  "output_folder" : "reports",
+
+  "test_settings" : {
+    "default" : {
+      "filter" : "*.spec.js",
+
+      "selenium_host": "127.0.0.1",
+      "selenium_port": 4444,
+      "launch_url" : "https://alexpts.ru",
+
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true
+      }
+    }
+  }
+}
