@@ -1,9 +1,14 @@
-var _ = require('lodash');
-var bootstrap = require('./includes/bootstrap.js');
+module.exports = {
+  before: function(client) {
+    client.windowMaximize();
+  },
 
-module.exports = _.assign(bootstrap, {
+  after: function(client) {
+    client.end();
+  },
+
   'open main page': function(client) {
-    client.url(client.launchUrl + '/');
+    client.url(client.launchUrl);
   },
 
   'check title': function(client) {
@@ -19,4 +24,4 @@ module.exports = _.assign(bootstrap, {
   'footer should exist': function(client) {
     client.assert.visible('footer');
   }
-});
+};
