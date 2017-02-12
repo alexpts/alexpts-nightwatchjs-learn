@@ -1,27 +1,17 @@
-module.exports = {
-  before: function(client) {
-    client.windowMaximize();
-  },
+const _ = require('lodash');
+const base = require('./base.js');
 
-  after: function(client) {
-    client.end();
-  },
+module.exports = _.assign(base, {
 
-  'open main page': function(client) {
-    client.url(client.launchUrl);
-  },
+  'open home page': (client) => client.url(client.launchUrl),
 
-  'check title': function(client) {
-    client.assert.title('Alexpts блог');
-  },
+  'check title home page': (client) => client.assert.title('Alexpts блог'),
 
-  'header should exist': function(client) {
+  'header should exist': client => {
     client
       .assert.visible('header')
       .assert.elementPresent('header');
   },
 
-  'footer should exist': function(client) {
-    client.assert.visible('footer');
-  }
-};
+  'footer should exist': (client) => client.assert.visible('footer')
+});

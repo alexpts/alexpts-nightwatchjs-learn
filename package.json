@@ -5,15 +5,18 @@
   "main": "index.js",
   "scripts": {
     "test": "nightwatch",
+    "test-cloud": "nightwatch --env browserstack",
+    "test-aws": "nightwatch --env aws",
     "selenium-start": "selenium-standalone start",
     "selenium-install": "selenium-standalone install"
   },
   "author": "Alexpts",
   "license": "MIT",
   "devDependencies": {
-    "selenium-standalone": "~5.1.0"
+    "selenium-standalone": "~6.0.1"
   },
   "dependencies": {
-    "nightwatch": "~0.8.18"
+    "lodash": "^4.17.4",
+    "nightwatch": "~0.9.12"
   }
 }

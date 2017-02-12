@@ -1,19 +1,81 @@
 {
-  "src_folders" : ["e2e"],
-  "output_folder" : "reports",
+  "src_folders": [
+    "e2e"
+  ],
+  "output_folder": "reports",
+  "test_workers": {
+    "enabled": true,
+    "workers": 1
+  },
+  "live_output": false,
 
-  "test_settings" : {
-    "default" : {
-      "filter" : "*.spec.js",
-
+  "test_settings": {
+    "default": {
+      "filter": "**/*.spec.js",
       "selenium_host": "127.0.0.1",
       "selenium_port": 4444,
-      "launch_url" : "https://alexpts.ru",
-
+      "launch_url": "https://alexpts.ru",
+      "start_process": true,
       "desiredCapabilities": {
         "browserName": "chrome",
         "javascriptEnabled": true,
-        "acceptSslCerts": true
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "start-fullscreen"
+          ]
+        }
+      }
+    },
+
+    "aws": {
+      "filter": "**/*.spec.js",
+      "selenium_host": "",
+      "selenium_port": 4444,
+      "launch_url": "https://alexpts.ru",
+      "start_process": true,
+      "desiredCapabilities": {
+        "browserName": "chrome",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "-disk-cache-dir=C:/chrome_temp/",
+            "start-fullscreen"
+          ]
+        }
+      }
+    },
+
+    "browserstack": {
+      "filter": "**/*.spec.js",
+      "selenium_host": "hub.browserstack.com",
+      "selenium_port": 80,
+      "launch_url": "https://alexpts.ru",
+      "request_timeout_options": 20000,
+      "silent": true,
+      "screenshots": {
+        "enabled": false,
+        "path": ""
+      },
+      "desiredCapabilities": {
+        "browserstack.user": "",
+        "browserstack.key": "",
+        "browserstack.local": false,
+        "browserstack.debug": false,
+        "browserstack.video": false,
+        "browserstack.selenium_version": "3.0.1",
+        "project": "demo-1",
+        "name": "",
+        "browserName": "chrome",
+        "version": "56",
+        "javascriptEnabled": true,
+        "acceptSslCerts": true,
+        "chromeOptions": {
+          "args": [
+            "start-fullscreen"
+          ]
+        }
       }
     }
   }
